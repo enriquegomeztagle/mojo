@@ -1,0 +1,15 @@
+[project]
+authors = ["Enrique Ulises Báez Gómez Tagle <0241823@up.edu.mx>"]
+channels = ["conda-forge", "https://conda.modular.com/max"]
+description = "Add a short description here"
+name = "linear-reg"
+platforms = ["osx-arm64"]
+version = "0.1.0"
+
+[tasks]
+
+[dependencies]
+max = ">=24.5.0,<25"
+matplotlib = ">=3.9.2,<4"
+pandas = ">=2.2.3,<3"
+scikit-learn = ">=1.5.2,<2"

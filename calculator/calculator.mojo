@@ -60,6 +60,7 @@ def main():
         if int_choice in simple_options:
             print("Enter first number: ", end="")
             a = try_parse_int(input())
+            
             print("Enter second number: ", end="")
             b = try_parse_int(input())
 
@@ -69,9 +70,11 @@ def main():
                 print("The difference is: ", subtract(a, b))
             elif int_choice == 3:
                 print("The product is: ", multiply(a, b))
+                
         elif int_choice == 4:
             print("Enter first number: ", end="")
             a_float = try_parse_float(input())
+
             print("Enter second number: ", end="")
             b_float = try_parse_float(input())
 

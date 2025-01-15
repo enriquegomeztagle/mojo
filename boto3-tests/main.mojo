@@ -9,12 +9,11 @@ fn main() raises:
     
     # Get list of buckets
     var response = s3_client.list_buckets()
+    var buckets = response["Buckets"]
     
-    # Filter and print buckets containing 'alsea'
-    py.eval("""
-buckets = boto3.client('s3').list_buckets()['Buckets']
-alsea_buckets = [bucket['Name'] for bucket in buckets if 'alsea' in bucket['Name'].lower()]
-print('Buckets containing "alsea":')
-for bucket in alsea_buckets:
-    print(f'- {bucket}')
-""")
+    print('Buckets containing "alsea":')
+    # Iterate through buckets and filter
+    for bucket in buckets:
+        var bucket_name = bucket["Name"]
+        if "alsea" in bucket_name.lower():
+            print("- ", bucket_name)

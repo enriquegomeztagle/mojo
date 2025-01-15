@@ -1,6 +1,6 @@
 fn main(): None {
-    with open("requirements.txt", "r") as file {
-        let contents = file.read()
-        print(contents)
-    }
+    let file = File.open("requirements.txt", File.OpenMode.read)
+    let contents = file.read()
+    print(contents)
+    file.close()
 }

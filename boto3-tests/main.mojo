@@ -2,8 +2,13 @@ from python import Python
 from logger import Logger
 
 fn main() raises:
-    # Initialize logger
-    var logger = Logger()
+    # Initialize logger with file output and INFO level
+    var logger = Logger(
+        log_level=Logger.LOG_INFO,  # Only show INFO and above
+        log_file_path="app.log"     # Save logs to app.log
+    )
+
+    try:
 
     var py = Python()
 
@@ -59,3 +64,7 @@ fn main() raises:
 
     logger.info("Model responded with content. Printing response.")
     print("Response:", response.content)
+    
+    finally:
+        # Make sure to close the log file
+        logger.close()

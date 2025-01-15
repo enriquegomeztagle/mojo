@@ -2,7 +2,7 @@ from python import Python
 
 fn main() raises:
     # Initialize Python runtime
-    let py = Python()
+    var py = Python()
     
     # Import boto3
-    let boto3 = py.import_module("boto3")
+    var boto3 = py.import_module("boto3")

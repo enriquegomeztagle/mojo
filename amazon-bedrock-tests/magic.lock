@@ -3736,6 +3736,7 @@ packages:
   - python >=3.12,<3.13.0a0 *_cpython
   - python_abi 3.12.* *_cp312
   license: BSD-2-Clause
+  license_family: BSD
   size: 61198
   timestamp: 1736869673767
 - kind: conda

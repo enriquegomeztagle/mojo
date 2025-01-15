@@ -101,10 +101,6 @@ struct Logger:
         for entry in self.logs:
             print(entry.__str__())
 
-    fn clear_logs(self):
-        """Clear the in-memory log history"""
-        self.logs = self.py.list()
-
     fn set_log_level(self, level: Int):
         """Set minimum log level to display"""
         self.current_level = level

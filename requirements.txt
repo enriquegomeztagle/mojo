@@ -1,9 +1,0 @@
-# AWS and Cloud
-boto3==1.34.14
-langchain-aws==0.0.4
-
-# LangChain
-langchain-community==0.0.16
-
-# Environment
-python-dotenv==1.0.0

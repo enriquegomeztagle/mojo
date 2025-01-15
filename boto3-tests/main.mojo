@@ -1,9 +1,9 @@
 from python import Python
-from logger import get_logger
+from logger import Logger
 
 fn main() raises:
-    # Get logger functions
-    var info, warn, error, debug, report_all = get_logger()
+    # Initialize logger
+    var logger = Logger()
 
     var py = Python()
 
@@ -20,12 +20,12 @@ fn main() raises:
     var Tuple = typing.Tuple
     var Any = typing.Any
 
-    info("Loading environment variables using dotenv.")
+    logger.info("Loading environment variables using dotenv.")
 
     # --- Load environment variables ---
     dotenv.load_dotenv()
 
-    info("Retrieving AWS credentials from environment variables.")
+    logger.info("Retrieving AWS credentials from environment variables.")
 
     # --- Check AWS credentials ---
     var aws_access_key = os.getenv("AWS_ACCESS_KEY_ID")
@@ -33,17 +33,17 @@ fn main() raises:
     var aws_region = os.getenv("AWS_DEFAULT_REGION")
     var model_id = os.getenv("BEDROCK_MODEL_ID")
 
-    info("AWS Region is " + String(aws_region.__str__()))
-    info("Model ID is " + String(model_id.__str__()))
+    logger.info("AWS Region is " + String(aws_region.__str__()))
+    logger.info("Model ID is " + String(model_id.__str__()))
 
     # --- Create Bedrock client with explicit model name ---
-    info("Creating Bedrock client with model: " + String(model_id.__str__()))
+    logger.info("Creating Bedrock client with model: " + String(model_id.__str__()))
     var bedrock_runtime = boto3.client(
         service_name="bedrock-runtime",
         region_name=aws_region
     )
 
-    info("Initializing ChatBedrockConverse with temperature=0, max_tokens=None")
+    logger.info("Initializing ChatBedrockConverse with temperature=0, max_tokens=None")
     var llm = ChatBedrockConverse(
         model_id=model_id,
         temperature=0,
@@ -52,10 +52,10 @@ fn main() raises:
     )
 
     var messages = "HI"
-    info("Invoking the model with message: " + messages)
+    logger.info("Invoking the model with message: " + messages)
 
     # --- Invoke the model ---
     var response = llm.invoke(messages)
 
-    info("Model responded with content. Printing response.")
+    logger.info("Model responded with content. Printing response.")
     print("Response:", response.content)

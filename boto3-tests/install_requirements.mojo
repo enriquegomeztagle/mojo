@@ -5,10 +5,11 @@ fn main() raises:
     file_name = "requirements.txt"
     if os.path.exists(file_name):
         try:
-            f = open(file_name, "r")
-            for line in f:
+            f = os.open(file_name, os.O_RDONLY)
+            lines = f.readLines()
+            for line in lines:
                 package = line.strip()
-                if package:
+                if package != "":
                     command = f"conda install -y conda-forge::{package}"
                     result = subprocess.run(command, shell=True, capture_output=True, text=True)
                     if result.returncode == 0:

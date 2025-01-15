@@ -6,7 +6,7 @@ fn main() raises:
             var f = open("requirements.txt", "r")
             print(f.read())
             f.close()
-        except e: Exception:
-            print(f"Error opening file: {e}")
+        except:
+            print("Error opening file")
     else:
         print("requirements.txt does not exist")

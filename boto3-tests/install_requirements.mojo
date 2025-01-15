@@ -1,7 +1,7 @@
 fn main() raises:
     try:
-        let file = File.open("requirements.txt", File.OpenMode.read)
-        let contents = file.read()
+        var file = File.open("requirements.txt", File.OpenMode.read)
+        var contents = file.read()
         print(contents)
         file.close()
     catch e:

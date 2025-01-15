@@ -9,8 +9,7 @@ fn main() raises:
     )
 
     try:
-
-    var py = Python()
+        var py = Python()
 
     # --- Import required Python modules ---
     var os = py.import_module("os")

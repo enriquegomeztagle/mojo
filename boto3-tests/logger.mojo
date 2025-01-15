@@ -31,7 +31,7 @@ struct Logger:
         
         # Initialize log file if path provided
         if log_file_path != "":
-            self.log_file = self.py.open(log_file_path, "a")
+            self.log_file = self.builtins.open(log_file_path, "a")
         else:
             self.log_file = None
 

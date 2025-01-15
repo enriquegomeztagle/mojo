@@ -1,8 +1,7 @@
 fn main() raises:
     try:
-        var file = File.open("requirements.txt", File.OpenMode.read)
-        var contents = file.read()
-        print(contents)
-        file.close()
-    catch e:
+      var  f = open("requirements.txt", "r")
+      print(f.read())
+      f.close()
+    except:
         print("Error opening file: {e}")

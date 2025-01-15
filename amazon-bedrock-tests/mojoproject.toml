@@ -1,7 +1,7 @@
 [project]
 authors = ["enriquegomeztagle <0241823@up.edu.mx>"]
 channels = ["conda-forge", "https://conda.modular.com/max"]
-description = "Uusing amazon bedrock with boto3 sdk in Mojo"
+description = "Using amazon bedrock with boto3 sdk in Mojo"
 name = "amazon-bedrock-tests"
 platforms = ["osx-arm64"]
 version = "0.1.0"

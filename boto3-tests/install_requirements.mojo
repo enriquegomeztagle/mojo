@@ -1,9 +1,8 @@
 import os
 import subprocess
 
-file_name = "requirements.txt"
-
 fn main() raises:
+    file_name = "requirements.txt"
     if os.path.exists(file_name):
         try:
             f = os.open(file_name, os.O_RDONLY)

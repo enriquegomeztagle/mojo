@@ -23,7 +23,9 @@ fn main() raises:
     var llm = langchain_aws.ChatBedrockConverse()
     
     # Prepare the message
-    messages = [("system", "You are a helpful assistant"), ("human", "HI")]
+    var messages = py.list()
+    messages.append(py.tuple([py.str("system"), py.str("You are a helpful assistant")]))
+    messages.append(py.tuple([py.str("human"), py.str("HI")]))
     # Invoke the model
-    var response = llm.invoke(message)
+    var response = llm.invoke(messages)
     print("Response:", response)

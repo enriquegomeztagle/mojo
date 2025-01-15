@@ -15,8 +15,6 @@ fn main() raises:
     var List = typing.List
     var Tuple = typing.Tuple
     var Any = typing.Any
-
-    Messages = List[Tuple[str, str]]
     
     # Load environment variables
     dotenv.load_dotenv()

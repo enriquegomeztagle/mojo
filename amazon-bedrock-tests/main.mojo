@@ -1,11 +1,12 @@
 from python import Python
 from logger import Logger
 
+
 fn main() raises:
     # Initialize logger with file output and INFO level
     var logger = Logger(
         log_level=Logger.LOG_INFO,  # Only show INFO and above
-        log_file_path="app.log"     # Save logs to app.log
+        log_file_path="app.log",  # Save logs to app.log
     )
 
     try:
@@ -15,7 +16,9 @@ fn main() raises:
         var dotenv = py.import_module("dotenv")
         var typing = py.import_module("typing")
         var boto3 = py.import_module("boto3")
-        var ChatBedrockConverse = py.import_module("langchain_aws").ChatBedrockConverse
+        var ChatBedrockConverse = py.import_module(
+            "langchain_aws"
+        ).ChatBedrockConverse
 
         var Optional = typing.Optional
         var Dict = typing.Dict
@@ -40,13 +43,17 @@ fn main() raises:
         logger.info("Model ID is " + String(model_id.__str__()))
 
         # --- Create Bedrock client with explicit model name ---
-        logger.info("Creating Bedrock client with model: " + String(model_id.__str__()))
+        logger.info(
+            "Creating Bedrock client with model: " + String(model_id.__str__())
+        )
         var bedrock_runtime = boto3.client(
-            service_name="bedrock-runtime",
-            region_name=aws_region
+            service_name="bedrock-runtime", region_name=aws_region
         )
 
-        logger.info("Initializing ChatBedrockConverse with temperature=0, max_tokens=None")
+        logger.info(
+            "Initializing ChatBedrockConverse with temperature=0,"
+            " max_tokens=None"
+        )
         var llm = ChatBedrockConverse(
             model_id=model_id,
             temperature=0,

@@ -1,5 +1,6 @@
 from python import Python, PythonObject
 
+
 struct Logger:
     # Add log levels as constants
     alias LOG_DEBUG = 0
@@ -22,7 +23,9 @@ struct Logger:
     alias CYAN = "\x1b[36m"
     alias WHITE = "\x1b[37m"
 
-    fn __init__(inout self, log_level: Int = 0, log_file_path: String = "") raises:
+    fn __init__(
+        inout self, log_level: Int = 0, log_file_path: String = ""
+    ) raises:
         self.py = Python()
         self.builtins = self.py.import_module("builtins")
         self.datetime = self.py.import_module("datetime")
@@ -59,13 +62,15 @@ struct Logger:
 
         var format_str = "{}[{}] {} - {}{}"
         var py_format = self.builtins.str(format_str)
-        var log_line = String(py_format.format(
-            color.__str__(),
-            level.__str__(),
-            timestamp.__str__(),
-            message.__str__(),
-            self.RESET.__str__()
-        ).__str__())
+        var log_line = String(
+            py_format.format(
+                color.__str__(),
+                level.__str__(),
+                timestamp.__str__(),
+                message.__str__(),
+                self.RESET.__str__(),
+            ).__str__()
+        )
 
         # Plain text version for file
         var plain_log = "[" + level + "] " + timestamp + " - " + message

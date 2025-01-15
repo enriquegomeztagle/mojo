@@ -1,7 +1,6 @@
 fn main(): None {
-    var file = open("requirements.txt", "r")
-    let contents = file.read()
-    file.close()
-
-    print(contents)
+    with open("requirements.txt", "r") as file {
+        let contents = file.read()
+        print(contents)
+    }
 }

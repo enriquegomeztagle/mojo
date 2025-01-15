@@ -40,4 +40,4 @@ fn main() raises:
     messages = "HI"
     # Invoke the model
     var response = llm.invoke(messages)
-    print("Response:", response)
+    print("Response:", response.content)

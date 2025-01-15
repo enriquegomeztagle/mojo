@@ -1,4 +1,4 @@
-from python import Python
+from python import Python, PythonObject
 
 struct Logger:
     var py: Python
@@ -14,17 +14,17 @@ struct Logger:
     alias CYAN = "\x1b[36m"
     alias WHITE = "\x1b[37m"
 
-    fn __init__(inout self):
+    fn __init__(inout self) raises:
         self.py = Python()
         self.builtins = self.py.import_module("builtins")
         self.datetime = self.py.import_module("datetime")
         self.logs = self.py.list()
 
-    fn get_timestamp(self) -> String:
+    fn get_timestamp(self) raises -> String:
         var now = self.datetime.datetime.now()
         return String(now.strftime("%Y-%m-%d %H:%M:%S").__str__())
 
-    fn log_message(self, level: String, message: String):
+    fn log_message(self, level: String, message: String) raises:
         var timestamp = self.get_timestamp()
         
         # Pick color based on level
@@ -52,19 +52,19 @@ struct Logger:
         self.logs.append(py_log)
         print(log_line)
 
-    fn info(self, msg: String):
+    fn info(self, msg: String) raises:
         self.log_message("INFO", msg)
 
-    fn warn(self, msg: String):
+    fn warn(self, msg: String) raises:
         self.log_message("WARN", msg)
 
-    fn error(self, msg: String):
+    fn error(self, msg: String) raises:
         self.log_message("ERROR", msg)
 
-    fn debug(self, msg: String):
+    fn debug(self, msg: String) raises:
         self.log_message("DEBUG", msg)
 
-    fn report_all(self):
+    fn report_all(self) raises:
         print("\n===== LOG REPORT =====")
         for entry in self.logs:
             print(entry.__str__())

@@ -1,9 +1,10 @@
 import os
 
 fn main() raises:
-    if os.path.exists("requirements.txt"):
+    file_name = "requirements.txt"
+    if os.path.exists(file_name):
         try:
-            var f = open("requirements.txt", "r")
+            f = open(file_name, "r")
             print(f.read())
             f.close()
         except:

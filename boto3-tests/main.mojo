@@ -23,7 +23,7 @@ fn main() raises:
     var llm = langchain_aws.ChatBedrockConverse()
     
     # Prepare the message
-    # messages = [("system", "You are a helpful assistant"), ("human", "HI")]
+    messages = [("system", "You are a helpful assistant"), ("human", "HI")]
     # Invoke the model
-    # var response = llm.invoke(messages)
-    # print("Response:", response)
+    var response = llm.invoke(message)
+    print("Response:", response)

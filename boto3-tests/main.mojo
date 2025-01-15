@@ -24,8 +24,8 @@ fn main() raises:
     
     # Prepare the message
     var messages = py.list()
-    messages.append(py.tuple([py.str("system"), py.str("You are a helpful assistant")]))
-    messages.append(py.tuple([py.str("human"), py.str("HI")]))
+    messages.append(py.evaluate("('system', 'You are a helpful assistant')"))
+    messages.append(py.evaluate("('human', 'HI')"))
     # Invoke the model
     var response = llm.invoke(messages)
     print("Response:", response)

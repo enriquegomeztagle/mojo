@@ -4,9 +4,8 @@ fn main() raises:
     # Initialize Python runtime
     var py = Python()
     
-    # Print Python path to debug
-    var python_path = py.eval("import sys; sys.executable")
-    print("Python path:", python_path)
+    # Print Python path to debug - using print() inside the Python eval
+    py.eval("import sys; print('Python executable:', sys.executable)")
     
     try:
         # Import boto3
@@ -14,5 +13,5 @@ fn main() raises:
         print("Successfully imported boto3")
     except:
         print("Failed to import boto3")
-        var sys_path = py.eval("import sys; sys.path")
-        print("Python sys.path:", sys_path)
+        # Print sys.path directly from Python
+        py.eval("import sys; print('Python sys.path:', sys.path)")

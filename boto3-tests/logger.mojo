@@ -3,7 +3,7 @@ from python import Python, PythonObject
 struct Logger:
     # Add log levels as constants
     alias LOG_DEBUG = 0
-    alias LOG_INFO = 1 
+    alias LOG_INFO = 1
     alias LOG_WARN = 2
     alias LOG_ERROR = 3
 
@@ -11,9 +11,9 @@ struct Logger:
     var builtins: PythonObject
     var datetime: PythonObject
     var logs: PythonObject
-    var log_file: PythonObject  # For file output
-    var current_level: Int      # For log filtering
-    
+    var log_file: PythonObject
+    var current_level: Int
+
     # ANSI Colors as class constants
     alias RESET = "\x1b[0m"
     alias RED = "\x1b[31m"
@@ -28,7 +28,7 @@ struct Logger:
         self.datetime = self.py.import_module("datetime")
         self.logs = self.py.list()
         self.current_level = log_level
-        
+
         # Initialize log file if path provided
         if log_file_path != "":
             self.log_file = self.builtins.open(log_file_path, "a")
@@ -45,7 +45,7 @@ struct Logger:
             return
 
         var timestamp = self.get_timestamp()
-        
+
         # Pick color based on level
         var color = self.WHITE
         if level == "INFO":

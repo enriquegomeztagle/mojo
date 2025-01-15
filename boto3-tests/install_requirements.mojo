@@ -1,8 +1,7 @@
 fn main(): None {
-    let file = try File.open("requirements.txt", File.OpenMode.read)
-    let reader = try file.getLines()
+    var file = open("requirements.txt", "r")
+    let contents = file.read()
+    file.close()
 
-    for line in reader {
-        print(line)
-    }
+    print(contents)
 }

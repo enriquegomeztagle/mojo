@@ -1,6 +1,0 @@
-[WARN] 2025-01-15 19:35:03 - This is a warning message (regex match).
-[WARN] 2025-01-15 19:35:03 - This is a special warning (regex match).
-[DEBUG] 2025-01-15 19:40:10 - This debug message goes to the file.
-[INFO] 2025-01-15 19:40:10 - Info to file
-[DEBUG] 2025-01-15 19:40:57 - This debug message goes to the file.
-[INFO] 2025-01-15 19:40:57 - Info to file

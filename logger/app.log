@@ -1,12 +1,6 @@
-{"level": "INFO", "timestamp": "2025-01-15 17:34:06", "message": "This is an info message"}
-{"level": "WARN", "timestamp": "2025-01-15 17:34:06", "message": "This is a warning message"}
-{"level": "ERROR", "timestamp": "2025-01-15 17:34:06", "message": "This is an error message"}
-[INFO] 2025-01-15 17:34:33 - This is an info message
-[WARN] 2025-01-15 17:34:33 - This is a warning message
-[ERROR] 2025-01-15 17:34:33 - This is an error message
-{"level": "INFO", "timestamp": "2025-01-15 17:46:17", "message": "This is an info message"}
-{"level": "WARN", "timestamp": "2025-01-15 17:46:17", "message": "This is a warning message"}
-{"level": "ERROR", "timestamp": "2025-01-15 17:46:17", "message": "This is an error message"}
-{"level": "INFO", "timestamp": "2025-01-15 19:24:49", "message": "This is an info message"}
-{"level": "WARN", "timestamp": "2025-01-15 19:24:49", "message": "This is a warning message"}
-{"level": "ERROR", "timestamp": "2025-01-15 19:24:49", "message": "This is an error message"}
+[WARN] 2025-01-15 19:35:03 - This is a warning message (regex match).
+[WARN] 2025-01-15 19:35:03 - This is a special warning (regex match).
+[DEBUG] 2025-01-15 19:40:10 - This debug message goes to the file.
+[INFO] 2025-01-15 19:40:10 - Info to file
+[DEBUG] 2025-01-15 19:40:57 - This debug message goes to the file.
+[INFO] 2025-01-15 19:40:57 - Info to file

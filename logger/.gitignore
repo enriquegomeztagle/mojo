@@ -4,3 +4,4 @@
 # magic environments
 .magic
 *.log
+.DS_Store

@@ -17,19 +17,17 @@ fn main() raises:
     logger.warn("This is a special warning (regex match).")
     logger.info("Unimportant message")
 
-
-    # logger.report_all()
-
+    logger.report_all()
 
     # Test JSON logging
-    # var json_logger = Logger(log_level=Logger.LOG_INFO, use_json=True)
-    # json_logger.info("This is a JSON formatted log message.")
-    # json_logger.warn("Another JSON warning.")
-    # json_logger.report_all()
+    var json_logger = Logger(log_level=Logger.LOG_INFO, use_json=True)
+    json_logger.info("This is a JSON formatted log message.")
+    json_logger.warn("Another JSON warning.")
+    json_logger.report_all()
 
     # Test file logging
-    # var file_logger = Logger(log_level=Logger.LOG_DEBUG, log_file_path="app.log")
-    # file_logger.debug("This debug message goes to the file.")
-    # file_logger.info("Info to file")
-    # file_logger.close()
+    var file_logger = Logger(log_level=Logger.LOG_DEBUG, log_file_path="app.log")
+    file_logger.debug("This debug message goes to the file.")
+    file_logger.info("Info to file")
+    file_logger.close()
 

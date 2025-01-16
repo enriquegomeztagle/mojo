@@ -42,3 +42,7 @@ Thumbs.db
 
 # Project specific
 .aider*
+
+###################### CUSTOM ######################
+*.log
+*.txt

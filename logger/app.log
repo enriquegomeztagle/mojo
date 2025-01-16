@@ -1,6 +1,12 @@
-[INFO] 2025-01-15 16:32:53 - This is an info message
-[WARN] 2025-01-15 16:32:53 - This is a warning message
-[ERROR] 2025-01-15 16:32:53 - This is an error message
-[INFO] 2025-01-15 17:10:57 - This is an info message
-[WARN] 2025-01-15 17:10:57 - This is a warning message
-[ERROR] 2025-01-15 17:10:57 - This is an error message
+{"level": "INFO", "timestamp": "2025-01-15 17:34:06", "message": "This is an info message"}
+{"level": "WARN", "timestamp": "2025-01-15 17:34:06", "message": "This is a warning message"}
+{"level": "ERROR", "timestamp": "2025-01-15 17:34:06", "message": "This is an error message"}
+[INFO] 2025-01-15 17:34:33 - This is an info message
+[WARN] 2025-01-15 17:34:33 - This is a warning message
+[ERROR] 2025-01-15 17:34:33 - This is an error message
+{"level": "INFO", "timestamp": "2025-01-15 17:46:17", "message": "This is an info message"}
+{"level": "WARN", "timestamp": "2025-01-15 17:46:17", "message": "This is a warning message"}
+{"level": "ERROR", "timestamp": "2025-01-15 17:46:17", "message": "This is an error message"}
+{"level": "INFO", "timestamp": "2025-01-15 19:24:49", "message": "This is an info message"}
+{"level": "WARN", "timestamp": "2025-01-15 19:24:49", "message": "This is a warning message"}
+{"level": "ERROR", "timestamp": "2025-01-15 19:24:49", "message": "This is an error message"}
